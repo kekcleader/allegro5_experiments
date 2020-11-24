@@ -50,5 +50,5 @@ See “Windows” section of [this tutorial](https://github.com/liballeg/allegro
 | Имя / Name | Описание / Description |
 | --------- | ----------- |
 | [1\_simplest](1_simplest/simplest.c) | Создаёт окно с надписью. Creates a window with a sign. |
-| [2\_lines](2_lines/lines.c) | Рисует фигуру, которая движется при щелчке мыши. Draws a figure, that moves right upon mouse click. |
+| [2\_lines](2_lines/lines.c) | Рисует фигуру, которая движется по щелчку мыши. Draws a figure, that moves right upon mouse click. |
 | [3\_windows](3_windows/windows.c) | Открывает несколько окон. Opens multiple windows. |
