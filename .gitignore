@@ -1,3 +1,6 @@
 *.o
 *.exe
 *.out
+
+1_simplest/simplest
+2_lines/lines
