@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_primitives.h>
@@ -49,6 +50,7 @@ void HandleMouseDown(ALLEGRO_MOUSE_EVENT *event, bool *done) {
   int y = event->y;
   if ((300 <= x) && (x <= 316) && (4 <= y) && (y <= 20)) {
     CloseWindow(event->display);
+    if (windowCount == 0) *done = true;
   } else {
     OpenWindow();
   }
@@ -66,6 +68,7 @@ void HandleWindowClose(ALLEGRO_DISPLAY_EVENT *event, bool *done){
     *done = true;
   } else {
     CloseWindow(event->source);
+    if (windowCount == 0) *done = true;
   }
 }
 
