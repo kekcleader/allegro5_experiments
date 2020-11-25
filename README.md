@@ -4,15 +4,21 @@
 
 *See English below*
 
-## Установка (Дебиан)
+## Установка под Дебиан
 ```
-sudo add-apt-repository ppa:allegro/5.2
 sudo apt-get install -y liballegro*5.2 liballegro*5-dev
 ```
 или смотри [инструкцию](https://github.com/liballeg/allegro_wiki/wiki/Quickstart).
 
+### Установка под Убунту
+```
+sudo add-apt-repository ppa:allegro/5.2
+sudo apt-get install -y liballegro*5.2 liballegro*5-dev
+```
+
 ### Установка под Windows
 Смотри раздел «Windows» в [следующей инструкции](https://github.com/liballeg/allegro_wiki/wiki/Quickstart).
+Скачать и установить MinGW-w64, скачать библиотеки и включаемые файлы Allegro 5 и переместите их в каталоги MinGW.
 
 ## Компиляция и запуск
 ```
@@ -26,20 +32,27 @@ make run
 
 # Allegro 5 experiments in C and Oberon
 
-## Setup (Debian)
+## Setup on Debian
 ```
-sudo apt-get install gcc make libx11-dev
+sudo apt-get install -y liballegro*5.2 liballegro*5-dev
 ```
 or check out [the tutorial](https://github.com/liballeg/allegro_wiki/wiki/Quickstart).
+
+### Setup on Ubuntu
+```
+sudo add-apt-repository ppa:allegro/5.2
+sudo apt-get install -y liballegro*5.2 liballegro*5-dev
+```
+
+### Setup on Windows
+See “Windows” section of [this tutorial](https://github.com/liballeg/allegro_wiki/wiki/Quickstart).
+Download and install MinGW-w64, download Allegro 5 libraries and includes and move them to the MinGW folders.
 
 ## Compile & Run
 ```
 cd 1_simplest
 make run
 ```
-
-### Setup on Windows
-See “Windows” section of [this tutorial](https://github.com/liballeg/allegro_wiki/wiki/Quickstart).
 
 *See the list of examples below*
 
