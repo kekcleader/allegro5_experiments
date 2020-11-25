@@ -98,9 +98,13 @@ int main() {
     if (event.type == ALLEGRO_EVENT_TIMER) {
       redraw = true;
     } else if (event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
-      HandleMouseDown((ALLEGRO_MOUSE_EVENT *)&event, &done);
+      // &event.mouse is the same as (ALLEGRO_MOUSE_EVENT *)&event
+      // as the type ALLEGRO_EVENT is a C union.
+      HandleMouseDown(&event.mouse, &done);
     } else if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
-      HandleWindowClose((ALLEGRO_DISPLAY_EVENT *)&event, &done);
+      // &event.display is the same as (ALLEGRO_DISPLAY_EVENT *)&event
+      // as the type ALLEGRO_EVENT is a C union.
+      HandleWindowClose(&event.display, &done);
     }
 
     if (redraw && al_is_event_queue_empty(queue)) {

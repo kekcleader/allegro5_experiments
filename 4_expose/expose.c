@@ -62,7 +62,7 @@ int main() {
     al_wait_for_event(queue, &event);
 
     if (event.type == ALLEGRO_EVENT_DISPLAY_EXPOSE) {
-      expose((ALLEGRO_DISPLAY_EVENT *)&event);
+      expose(&event.display);
     } else if (event.type == ALLEGRO_EVENT_DISPLAY_RESIZE) {
       al_acknowledge_resize(event.display.source);
     } else if ((event.type == ALLEGRO_EVENT_KEY_DOWN) ||
