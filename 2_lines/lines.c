@@ -5,10 +5,12 @@
 static int Z = 10;
 
 void draw() {
-  al_clear_to_color(al_map_rgb(0, 0, 120));
-  al_draw_line(Z + 30.5, 30.5, Z + 0.5, 120.5, al_map_rgb(255, 155, 0), 1);
-  al_draw_line(Z + 30.5, 30.5, Z + 70.5, 70.5, al_map_rgb(255, 155, 0), 1);
-  al_draw_line(Z + 70.5, 70.5, Z + 0.5, 120.5, al_map_rgb(255, 155, 0), 1);
+  al_clear_to_color(al_map_rgb(40, 0, 0));
+  float Q = Z;
+
+  al_draw_line(Q + 30.5, 30.5, Q + 0.5, 120.5, al_map_rgb(255, 155, 0), 0);
+  al_draw_line(Q + 30.5, 30.5, Q + 70.5, 70.5, al_map_rgb(255, 155, 0), 0);
+  al_draw_line(Q + 70.5, 70.5, Q + 0.5, 120.5, al_map_rgb(255, 155, 0), 0);
 }
 
 int main() {
