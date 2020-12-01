@@ -66,3 +66,4 @@ make run
 | [2\_lines](2_lines/lines.c) | Рисует фигуру, которая движется по щелчку мыши. Draws a figure, that moves right upon mouse click. |
 | [3\_windows](3_windows/windows.c) | Открывает несколько окон. Opens multiple windows. |
 | [4\_expose](4_expose/expose.c) | Перерисовывает раскрытые части окна. Redraws exposed parts of the window. |
+| [5\_pixels](5_pixels/pixels.c) | Рисует каждый пиксель отдельно. Draws each pixel individually. |
