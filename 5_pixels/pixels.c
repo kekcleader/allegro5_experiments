@@ -4,7 +4,8 @@
 #define W 640
 #define H 400
 
-static float t = 1.0;
+static float t;
+static uint32_t m[256];
 
 ALLEGRO_DISPLAY* disp;
 ALLEGRO_BITMAP *S; /* Screen */
@@ -29,23 +30,33 @@ void flip() {
 }
 
 void draw() {
-  int x, y, i, j, pitch;
+  float z;
+  int x, y, i, j, pitch, n;
   uint32_t *data;
-  uint32_t n;
 
   al_set_target_bitmap(S);
   data = (int32_t *)screenRegion->data;
   pitch = screenRegion->pitch / 4; /* Must be divisible by 4*/
 
   j = 0;
-  for (y = 0; y < H; y++) {
+  for (y = -H/2; y < H/2; y++) {
     i = j;
-    for (x = 0; x < W; x++) {
-      n = (uint32_t)(t * x * y) % 256;
-      data[i] = (255 << 24) | n;
+    z = t * y;
+    for (x = -W/2; x < W/2; x++) {
+      n = (int)(x * z) & 255;
+      data[i] = m[n];
       i++;
     }
     j += pitch; /* May even be negative */
+  }
+}
+
+void init_colors() {
+  int i, n;
+  for (i = 0; i < 256; i++) {
+    n = i * 2 - 255;
+    if (n < 0) n = -n;
+    m[i] = (255 << 24) | n;
   }
 }
 
@@ -69,6 +80,9 @@ int main() {
   bool redraw = true;
   bool done = false;
   ALLEGRO_EVENT event;
+
+  init_colors();
+  t = 1.3;
 
   al_start_timer(timer);
   while (!done) {
